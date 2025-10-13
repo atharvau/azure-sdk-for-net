@@ -1,5 +1,18 @@
 # Release History
 
+## 1.1.0 (2025-10-13)
+
+### Features Added
+
+- Added support for `x-ms-skip-api-version-override` configuration to fix Long Running Operations (LRO) API version handling
+- LRO operations now correctly use appropriate API versions for polling endpoints instead of reusing the initial request API version
+- Fixed issue where LRO polling would fail with "No registered resource provider found" errors due to incorrect API version usage
+
+### Bugs Fixed
+
+- Fixed LRO operations failing when polling `locations/operationStatuses` endpoint with incorrect API version (2025-06-01 instead of 2023-07-01-preview)
+- Resolved CreateOrUpdate operations timeout issues in EASTUS2EUAP region
+
 ## 1.0.0 (2025-09-01)
 
 
